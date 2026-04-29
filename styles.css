@@ -2,19 +2,32 @@
     text-align: center;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    gap: 250px;
-    background-color: DodgerBlue;
+.Rock {
+            flex: 1;
+            position: absolute; /* Allows free placement */
+            top: 100px;  /* Distance from the top of the container */
+            left: 100px; /* Distance from the left of the container */
+            width: 150px;
+            height: auto;
+        }
+
+
+.Paper {
+            position: absolute;
+            top: 100px;  
+            left: 350px;
+            width: 150px;
+            height: auto;
 }
 
-.container div {
-    background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
-    font-size: 24px;
-}
+
+.Scissors {
+            position: absolute;
+            top: 100px;  
+            left: 600px;
+            width: 150px;
+            height: auto;
+}  
 
 .Human {
     position: absolute; 
@@ -27,7 +40,11 @@
 .Robot {
     position: absolute; 
     top: 500px;  
-    left: 450px; 
+    left:500px; 
     width: 150px;
     height: auto;
+}
+
+body {
+background-color: #8f999c;
 }
