@@ -5,75 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-dark text-white">
 
-        <element class="center-text"><h1>You VS Computer </h1></element>
+  <div class="container text-center py-5">
 
-    <form action="" method="post">
-    <input type="image" src="OIP.webp" alt="Submit" width="150" height="50" class="Rock">
-</form>
-    <form action="" method="post">
-    <input type="image" src="download.webp" alt="Submit" width="150" height="50" class="Paper">
-</form>
-    <form action="" method="post">
-    <input type="image" src="download (2).webp" alt="Submit" width="150" height="50" class="Scissors">
-</form>
-    <form action="" method="post">
-    <input type="image" src="OIP (1).webp" alt="Submit" width="150" height="50" class="Reset">
-</form>
-    <img src="OIP (3).webp" alt="" class="Human">
-        
-    <img src="OIP (2).webp" alt="" class="Robot">
+    <div class="game-title text-center mb-5">
+  <h1>Rock Paper Scissors</h1>
+  <p class="subtitle">Play against the computer 🤖</p>
+</div>
 
-    <h1>RESULTS:</h1>
+    <!-- Images -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-6 col-md-3">
+        <img src="OIP (3).webp" class="img-fluid rounded" alt="Human">
+        <p class="mt-2">Human</p>
+      </div>
 
-    <p>Your Score:</p>
-    <p>Robot Score:</p>
+      <div class="col-6 col-md-3">
+        <img src="OIP (2).webp" class="img-fluid rounded" alt="Robot">
+        <p class="mt-2">Robot</p>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
 
-    <div class="container">
+  <div class="col-4 col-md-2">
+    <img src="OIP.webp" class="img-fluid choice" alt="Rock" onclick="play('rock')">
+    <p>Rock</p>
+  </div>
 
+  <div class="col-4 col-md-2">
+    <img src="download.webp" class="img-fluid choice" alt="Paper" onclick="play('paper')">
+    <p>Paper</p>
+  </div>
 
+  <div class="col-4 col-md-2">
+    <img src="download (2).webp" class="img-fluid choice" alt="Scissors" onclick="play('scissors')">
+    <p>Scissors</p>
+  </div>
+</div>
 
+    <div class="mt-4">
+  <h4>Player's Choice:</h4>
+  <p id="playerChoice" class="choice-text">None</p>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#instructionsModal">
-            Show Instructions
-        </button>
+  <h4 class="mt-3">Computer's Choice:</h4>
+  <p id="computerChoice" class="choice-text">None</p>
+</div>
 
+<!-- Round Result -->
+<div class="mt-4">
+  <h2 id="roundResult" class="fw-bold">Result: Waiting...</h2>
+</div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="instructionsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="instructionsModalLabel" aria-hidden="false">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="instructionsModalLabel">How to Play <strong>Rock</strong>, <strong>Paper</strong>, <strong>Scissors</strong></h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Rock paper scissors is a quick 2-player game:
+<!-- Reset Button -->
+<div class="mt-4">
+  <img src="OIP (1).webp" alt="Reset Game" class="reset-img">
+</div>
 
-                        🪨 beats ✂️
-                        ✂️ beats 📄
-                        📄 beats 🪨
-
-                        Pick one at the same time—same choice = tie 🤝
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Results -->
+    <h1 class="mb-4">SCOREBOARD</h1>
+    <div class="mb-4">
+      <p class="fs-5">Your Score: <span id="userScore">0</span></p>
+      <p class="fs-5">Robot Score: <span id="robotScore">0</span></p>
     </div>
 
+    <!-- Button -->
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#instructionsModal">
+      Show Instructions
+    </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var instructionsModal = new bootstrap.Modal(document.getElementById('instructionsModal'));
-            instructionsModal.show();
-        });
-    </script>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="instructionsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+
+        <div class="modal-header">
+          <h5 class="modal-title">How to Play</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Rock paper scissors is a quick 2-player game:</p>
+          <ul>
+            <li>🪨 Rock beats ✂️ Scissors</li>
+            <li>✂️ Scissors beats 📄 Paper</li>
+            <li>📄 Paper beats 🪨 Rock</li>
+          </ul>
+          <p>If both players choose the same, it's a tie 🤝</p>
+          <p>Defeat the robot to save Marlon!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Auto-show modal -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = new bootstrap.Modal(document.getElementById("instructionsModal"));
+      modal.show();
+    });
+  </script>
+
 </body>
 </html>
