@@ -9,97 +9,108 @@
 </head>
 <body class="bg-dark text-white">
 
-  <div class="container text-center py-5">
+  <button class="btn btn-primary btn-sm mb-2"
+  data-bs-toggle="modal"
+  data-bs-target="#instructionsModal">
+  Instructions
+</button>
 
-    <div class="game-title text-center mb-5">
+  <div class="container d-flex flex-column justify-content-center text-center vh-100">
+    <div class="game-title mb-3">
   <h1>Rock Paper Scissors</h1>
   <p class="subtitle">Play against the computer 🤖</p>
 </div>
 
-    <!-- Images -->
-    <div class="row justify-content-center mb-4">
-      <div class="col-6 col-md-3">
-        <img src="OIP (3).webp" class="img-fluid rounded" alt="Human">
-        <p class="mt-2">Human</p>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <img src="OIP (2).webp" class="img-fluid rounded" alt="Robot">
-        <p class="mt-2">Robot</p>
-      </div>
-    </div>
-    <div class="row justify-content-center mt-4">
-
+<!-- Top Images (smaller) -->
+<div class="row justify-content-center mb-2">
   <div class="col-4 col-md-2">
-    <img src="OIP.webp" class="img-fluid choice" alt="Rock" onclick="play('rock')">
-    <p>Rock</p>
+    <img src="OIP (3).webp" class="img-fluid rounded small-img">
+    <p class="small-text">Human</p>
   </div>
 
   <div class="col-4 col-md-2">
-    <img src="download.webp" class="img-fluid choice" alt="Paper" onclick="play('paper')">
-    <p>Paper</p>
-  </div>
-
-  <div class="col-4 col-md-2">
-    <img src="download (2).webp" class="img-fluid choice" alt="Scissors" onclick="play('scissors')">
-    <p>Scissors</p>
+    <img src="OIP (2).webp" class="img-fluid rounded small-img">
+    <p class="small-text">Robot</p>
   </div>
 </div>
 
-    <div class="mt-4">
-  <h4>Player's Choice:</h4>
-  <p id="playerChoice" class="choice-text">None</p>
+<!-- Choices -->
+<div class="row justify-content-center mb-2">
+  <div class="col-3 col-md-2">
+    <img src="OIP.webp" class="img-fluid choice">
+    <p class="small-text">Rock</p>
+  </div>
 
-  <h4 class="mt-3">Computer's Choice:</h4>
-  <p id="computerChoice" class="choice-text">None</p>
+  <div class="col-3 col-md-2">
+    <img src="download.webp" class="img-fluid choice">
+    <p class="small-text">Paper</p>
+  </div>
+
+  <div class="col-3 col-md-2">
+    <img src="download (2).webp" class="img-fluid choice">
+    <p class="small-text">Scissors</p>
+  </div>
 </div>
 
-<!-- Round Result -->
-<div class="mt-4">
-  <h2 id="roundResult" class="fw-bold">Result: Waiting...</h2>
-</div>
-
-<!-- Reset Button -->
-<div class="mt-4">
-  <img src="OIP (1).webp" alt="Reset Game" class="reset-img">
-</div>
-
-    <!-- Results -->
+<div class="row justify-content-center mb-2">
     <h1 class="mb-4">SCOREBOARD</h1>
     <div class="mb-4">
       <p class="fs-5">Your Score: <span id="userScore">0</span></p>
       <p class="fs-5">Robot Score: <span id="robotScore">0</span></p>
-    </div>
 
-    <!-- Button -->
-    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#instructionsModal">
-      Show Instructions
-    </button>
+</div>
 
+<!-- Info Row (SIDE BY SIDE instead of stacked) -->
+<div class="row justify-content-center text-center mb-2">
+
+  <div class="col-4">
+    <h6>Player</h6>
+    <p class="choice-text">None</p>
   </div>
 
-  <!-- Modal -->
+  <div class="col-4">
+    <h6>Computer</h6>
+    <p class="choice-text">None</p>
+  </div>
+
+  <div class="col-4">
+    <h6>Result</h6>
+    <p class="choice-text">Waiting...</p>
+  </div>
+
+  <div class="row w-100 text-center">
+
+</div>
+
+<!-- Reset -->
+<div>
+  <img src="OIP (1).webp" class="reset-img">
+</div>
+  </div>
+
   <div class="modal fade" id="instructionsModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content text-dark">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark">
 
-        <div class="modal-header">
-          <h5 class="modal-title">How to Play</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
+      <div class="modal-header">
+        <h5 class="modal-title">How to Play</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
 
-        <div class="modal-body">
-          <p>Rock paper scissors is a quick 2-player game:</p>
+      <div class="modal-body">
+        <p>Choose your weapon!! Rock, Paper, or Scissors!!</p>
+        <p>Rock paper scissors is a quick 2-player game:</p>
           <ul>
             <li>🪨 Rock beats ✂️ Scissors</li>
             <li>✂️ Scissors beats 📄 Paper</li>
             <li>📄 Paper beats 🪨 Rock</li>
           </ul>
           <p>If both players choose the same, it's a tie 🤝</p>
+          <p>Scroll Down to Reset</p>
           <p>Defeat the robot to save Marlon!</p>
-        </div>
 
       </div>
+
     </div>
   </div>
 
