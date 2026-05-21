@@ -55,8 +55,8 @@
 <div class="row justify-content-center mb-2">
     <h1 class="mb-4">SCOREBOARD</h1>
     <div class="mb-4">
-      <p class="fs-5">Your Score: <span id="userScore">0</span></p>
-      <p class="fs-5">Robot Score: <span id="robotScore">0</span></p>
+      <p id = "playerChoice" class="fs-5">Your Picks: <span id="outcome"></span></p>
+      <p id = "robotScore" class="fs-5">RESULTS: <span id="result">0</span></p>
 
 </div>
 
@@ -65,12 +65,12 @@
 
   <div class="col-4">
     <h6>Player</h6>
-    <p class="choice-text">None</p>
+    <p id = "playerScore" class="choice-text">None</p>
   </div>
 
-  <div class="col-4">
+  <div  class="col-4">
     <h6>Computer</h6>
-    <p class="choice-text">None</p>
+    <p id = "computerScore" class="choice-text">None</p>
   </div>
 
   <div class="col-4">
@@ -83,8 +83,8 @@
 </div>
 
 <!-- Reset -->
-<div id="resetGame">
-  <img src="OIP (1).webp" class="reset-img">
+<div id="reset"  class="reset-img">
+  <img src="OIP (1).webp">
 </div>
   </div>
 
